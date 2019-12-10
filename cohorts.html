@@ -14,7 +14,7 @@ title: Cohorts
     {% assign learners = site.learners | where: "cohort", cohort.code %}
     {% for learner in learners %}
       <li>
-        <a href="{{learner.url}}">{{learner.name}}</a>
+        <a href="{{ learner.url | relative_url }}">{{learner.name}}</a>
         <ul>
           {% for flag in course.flags %}
             {% assign ilp-entry = learner.ilp-entries | where: "flag", flag.code | first %}

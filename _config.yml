@@ -1,3 +1,5 @@
+baseurl: /s9c9-ilp-test
+
 collections:
   authors:
     output: true
