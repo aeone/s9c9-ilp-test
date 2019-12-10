@@ -1,6 +1,8 @@
 collections:
   authors:
     output: true
+  learners:
+    output: true
 
 defaults:
   - scope:
@@ -8,6 +10,11 @@ defaults:
       type: "authors"
     values:
       layout: "author"
+  - scope:
+      path: ""
+      type: "learners"
+    values:
+      layout: "learner"
   - scope:
       path: ""
       type: "posts"

@@ -1,5 +1,7 @@
 - name: Home
   link: /
+- name: Cohorts
+  link: /cohorts.html
 - name: About
   link: /about.html
 - name: Blog

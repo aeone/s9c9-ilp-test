@@ -1,0 +1,30 @@
+- name: Software Developer (standard)
+  code: software-developer
+  flags: 
+   - name: Unit 1 Progress
+     code: completed_unit_1
+     description: Progress through unit 1
+   - name: Unit 2 Progress
+     code: completed_unit_2
+     description: Progress through unit 2
+   - name: Unit 3 Progress
+     code: completed_unit_3
+     description: Progress through unit 3
+   - name: Unit 4 Progress
+     code: completed_unit_4
+     description: Progress through unit 4
+   - name: Unit 5 Progress
+     code: completed_unit_5
+     description: Progress through unit 5
+   - name: Quarterly Review 1
+     code: completed_quarterly_review_1
+     description: Learner has had their \#1 quarterly review
+   - name: Quarterly Review 2
+     code: completed_quarterly_review_2
+     description: Learner has had their \#2 quarterly review
+   - name: Quarterly Review 3
+     code: completed_quarterly_review_3
+     description: Learner has had their \#3 quarterly review
+   - name: Quarterly Review 4
+     code: completed_quarterly_review_4
+     description: Learner has had their \#4 quarterly review

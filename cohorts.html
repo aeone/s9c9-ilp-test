@@ -1,0 +1,32 @@
+---
+layout: default
+title: Cohorts
+---
+<h1>Cohorts</h1>
+
+{% for cohort in site.data.cohorts %}
+  {% assign course = site.data.courses | where: "code", cohort.course | first %}
+  <h2>{{ cohort.name }}</h2>
+  <h3>{{ cohort.code }}</h3>
+  <p>{{ course.code }} - {{ cohort.course }}</p>
+  <p>{{ cohort.description | markdownify }}</p>
+  <ul>
+    {% assign learners = site.learners | where: "cohort", cohort.code %}
+    {% for learner in learners %}
+      <li>
+        <a href="{{learner.url}}">{{learner.name}}</a>
+        <ul>
+          {% for flag in course.flags %}
+            {% assign ilp-entry = learner.ilp-entries | where: "flag", flag.code | first %}
+            <li>{{ flag.name }} - 
+              {% if ilp-entry %}
+                Completed
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+</ul>

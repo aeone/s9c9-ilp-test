@@ -1,3 +1,31 @@
-.current {
-  color: green;
+$background: #101;
+$text: #eee;
+$link: teal;
+$active_link: aquamarine;
+$header_font: 'Roboto Slab', serif;
+$body_font: 'Roboto Condensed', sans-serif;
+
+h1, h2, h3, h4 {
+  font-family: $header_font;
+}
+a {
+  color: $link;
+}
+a.current {
+  color: $active_link;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+
+  background-color: $background;
+  color: $text;
+  font-family: $body_font;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
 }

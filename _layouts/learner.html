@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<h1>{{ page.name }} - {{ page.cohort }}</h1>
+
+<ul>
+  <li>{{ page.cohort }}</li>
+  <li>{{ page.name }}</li>
+  <li>{{ page.date | date_to_string }}</li>
+
+  <li>Languages exam status: {{ page.languages-exam-status }}</li>
+
+  <!-- {% assign author = site.authors | where: 'short_name', page.author | first %}
+  {% if author %}
+    - <a href="{{ author.url }}">{{ author.name }}</a>
+  {% endif %} -->
+</ul>
+
+{{ content }}
