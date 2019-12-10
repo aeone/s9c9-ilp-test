@@ -19,18 +19,25 @@ collections:
         name: 'ilp-entries'
         widget: 'list'
         fields:
+         - { label: 'Title', name: 'title', widget: 'string' }
          - { label: 'Date', name: 'date', widget: 'datetime' }
          - { label: 'Type', name: 'type', widget: 'select', options: ['milestone', 'guidance'] }
          - { label: 'Flag', name: 'flag', widget: 'string' }
-         - { label: 'Title', name: 'title', widget: 'string' }
          - { label: 'Description', name: 'description', widget: 'string' }
-  - name: 'cohort'
-    label: 'Cohorts'
-    file: '_data/cohorts.yml'
+  - name: 'config'
+    label: 'Config'
     editor:
       preview: false
-    fields:
-      - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'Code', name: 'code', widget: 'string' }
-      - { label: 'Course', name: 'course', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'string' }
+    files:
+      - name: 'cohort'
+        label: 'Cohorts'
+        file: '_data/cohorts.yml'
+        fields:
+          - label: 'List of cohorts'
+            name: 'items'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Code', name: 'code', widget: 'string' }
+              - { label: 'Course', name: 'course', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'string' }
