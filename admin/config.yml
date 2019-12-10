@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  name: github
+  repo: aeone/s9c9-ilp-test
+  branch: master
+  site_domain: infallible-euclid-eeb3b0.netlify.com
 media_folder: 'assets/uploads'
 collections:
   - name: 'blog'
