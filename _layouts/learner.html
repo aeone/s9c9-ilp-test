@@ -1,7 +1,17 @@
 ---
 layout: default
 ---
-<h1>{{ page.name }} - {{ page.cohort }}</h1>
+{% assign cohort = site.data.cohorts.items | where: "code", page.cohort | first %}
+{% assign course = site.data.courses.items | where: "code", cohort.course | first %}
+
+<h1>{{ page.name }} </h1>
+<p class="sub">LEARNER</p>
+
+<h3>{{ cohort.name }}</h3>
+<p class="sub">COHORT</p>
+
+<h3>{{ course.name }}</h3>
+<p class="sub">COURSE</p>
 
 <ul>
   <li>{{ page.cohort }}</li>
