@@ -58,7 +58,7 @@ collections:
       preview: false
     fields:
       - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'Cohort Shortcode', name: 'code', widget: 'string' }
+      - { label: 'Course Shortcode', name: 'code', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'markdown' }
       - label: 'Progress Flags'
         name: 'flags'
