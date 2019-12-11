@@ -6,7 +6,7 @@ backend:
 media_folder: 'assets/uploads'
 collections:
   - name: 'learner'
-    label: 'Learner'
+    label: 'Learners'
     folder: '_learners/'
     create: true
     slug: '{{year}}{{month}}-{{cohort}}-{{name}}'
@@ -14,7 +14,13 @@ collections:
       preview: false
     fields:
       - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'Cohort Shortcode', name: 'cohort', widget: 'string' }
+      - label: 'Cohort'
+        name: 'cohort'
+        widget: "relation"
+        collection: "cohort"
+        searchFields: ["name", "code"]
+        valueField: "code"
+        displayFields: ["name"]
       - label: 'Entries'
         name: 'ilp-entries'
         widget: 'list'
@@ -25,38 +31,74 @@ collections:
          - { label: 'Flag', name: 'flag', widget: 'string' }
          - { label: 'Flag Value', name: 'flag-value', widget: 'select', options: ['incomplete', 'in_progress', 'complete'] }
          - { label: 'Description', name: 'description', widget: 'markdown' }
-  - name: 'config'
-    label: 'Config'
+  - name: 'cohort'
+    label: 'Cohorts'
+    folder: '_cohorts/'
+    create: true
+    slug: '{{code}}'
     editor:
       preview: false
-    files:
-      - name: 'cohort'
-        label: 'Cohorts'
-        file: '_data/cohorts.yml'
+    fields:
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Cohort Shortcode', name: 'code', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'markdown' }
+      - label: 'Course'
+        name: 'course'
+        widget: "relation"
+        collection: "course"
+        searchFields: ["name", "code"]
+        valueField: "code"
+        displayFields: ["name"]
+  - name: 'course'
+    label: 'Courses'
+    folder: '_courses/'
+    create: true
+    slug: '{{code}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Cohort Shortcode', name: 'code', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'markdown' }
+      - label: 'Progress Flags'
+        name: 'flags'
+        widget: 'list'
         fields:
-          - label: 'List of cohorts'
-            name: 'items'
-            widget: 'list'
-            fields:
-              - { label: 'Name', name: 'name', widget: 'string' }
-              - { label: 'Code', name: 'code', widget: 'string' }
-              - { label: 'Course', name: 'course', widget: 'string' }
-              - { label: 'Description', name: 'description', widget: 'string' }
-      - name: 'course'
-        label: 'Courses'
-        file: '_data/courses.yml'
-        fields:
-          - label: 'List of courses'
-            name: 'items'
-            widget: 'list'
-            fields:
-              - { label: 'Name', name: 'name', widget: 'string' }
-              - { label: 'Code', name: 'code', widget: 'string' }
-              - label: 'Flags'
-                name: 'flags'
-                widget: 'list'
-                fields:
-                 - { label: 'Name', name: 'name', widget: 'string' }
-                 - { label: 'Code', name: 'code', widget: 'string' }
-                 - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Flag Shortcode', name: 'code', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'markdown' }
+  # - name: 'config'
+  #   label: 'Config'
+  #   editor:
+  #     preview: false
+  #   files:
+  #     - name: 'cohort'
+  #       label: 'Cohorts'
+  #       file: '_data/cohorts.yml'
+  #       fields:
+  #         - label: 'List of cohorts'
+  #           name: 'items'
+  #           widget: 'list'
+  #           fields:
+  #             - { label: 'Name', name: 'name', widget: 'string' }
+  #             - { label: 'Code', name: 'code', widget: 'string' }
+  #             - { label: 'Course', name: 'course', widget: 'string' }
+  #             - { label: 'Description', name: 'description', widget: 'string' }
+  #     - name: 'course'
+  #       label: 'Courses'
+  #       file: '_data/courses.yml'
+  #       fields:
+  #         - label: 'List of courses'
+  #           name: 'items'
+  #           widget: 'list'
+  #           fields:
+  #             - { label: 'Name', name: 'name', widget: 'string' }
+  #             - { label: 'Code', name: 'code', widget: 'string' }
+  #             - label: 'Flags'
+  #               name: 'flags'
+  #               widget: 'list'
+  #               fields:
+  #                - { label: 'Name', name: 'name', widget: 'string' }
+  #                - { label: 'Code', name: 'code', widget: 'string' }
+  #                - { label: 'Description', name: 'description', widget: 'string' }
               
