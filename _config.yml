@@ -1,27 +1,15 @@
 baseurl: /s9c9-ilp-test
 
 collections:
-  authors:
-    output: true
   learners:
     output: true
 
 defaults:
   - scope:
       path: ""
-      type: "authors"
-    values:
-      layout: "author"
-  - scope:
-      path: ""
       type: "learners"
     values:
       layout: "learner"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
   - scope:
       path: ""
     values:
