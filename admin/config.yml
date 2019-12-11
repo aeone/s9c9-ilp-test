@@ -21,6 +21,15 @@ collections:
         searchFields: ["name", "code"]
         valueField: "code"
         displayFields: ["name"]
+      - { label: 'Email', name: 'email', widget: 'string' }
+      - { label: 'Phone', name: 'phone', widget: 'string' }
+      - { label: 'ULN', name: 'uln', widget: 'string' }
+      - label: 'Line Manager'
+        name: 'line-manager'
+        widget: 'object'
+        fields: 
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
       - label: 'Entries'
         name: 'ilp-entries'
         widget: 'list'
