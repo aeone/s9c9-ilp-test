@@ -23,6 +23,7 @@ collections:
          - { label: 'Date', name: 'date', widget: 'datetime' }
          - { label: 'Type', name: 'type', widget: 'select', options: ['milestone', 'guidance'] }
          - { label: 'Flag', name: 'flag', widget: 'string' }
+         - { label: 'Flag Value', name: 'flag-value', widget: 'select', options: ['incomplete', 'in_progress', 'complete'] }
          - { label: 'Description', name: 'description', widget: 'markdown' }
   - name: 'config'
     label: 'Config'
