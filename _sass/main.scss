@@ -36,7 +36,10 @@ td, th {
 
 .sub { color: grey; }
 h1 + .sub { margin-top: -1.5rem; }
+h2 + .sub { margin-top: -1.3rem; }
 h3 + .sub { margin-top: -1.1rem; }
+h4 + .sub { margin-top: -1.3rem; }
+.sub + .sub { margin-top: -1rem; }
 .incomplete { color: red; }
 .in_progress { color: yellow; }
 .complete { color: green; }

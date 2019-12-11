@@ -7,30 +7,19 @@ title: Cohorts
 {% for cohort in site.data.cohorts.items %}
   {% assign course = site.data.courses.items | where: "code", cohort.course | first %}
   <h2>{{ cohort.name }}</h2>
-  <h3>{{ cohort.code }}</h3>
-  <p>{{ course.code }} - {{ cohort.course }}</p>
+  <p class="sub">COHORT NAME</p>
+  <h4>{{ cohort.code }}</h3>
+  <p class="sub">COHORT SHORTCODE</p>
+  <h4>{{ course.name }}</h3>
+  <p class="sub">COURSE USED FOR COHORT</p>
   <p>{{ cohort.description | markdownify }}</p>
+  <h3>Students</h3>
   <table>
     <thead>
       <th><span class="vertical-rl">Learner</span></th>
       {% for flag in course.flags %}
         <th><span class="vertical-rl box-col">{{ flag.name }}</span></th>
       {% endfor %}
-      <!-- <th class="vertical-rl">Unit 1</th>
-      <th class="vertical-rl">Unit 2</th>
-      <th class="vertical-rl">Unit 3</th>
-      <th class="vertical-rl">Unit 4</th>
-      <th class="vertical-rl">Unit 5</th>
-      <th class="vertical-rl">Quarterly Review 1</th>
-      <th class="vertical-rl">Quarterly Review 2</th>
-      <th class="vertical-rl">Quarterly Review 3</th>
-      <th class="vertical-rl">Quarterly Review 4</th>
-      <th class="vertical-rl">Portfolio</th>
-      <th class="vertical-rl">Employer Reference</th>
-      <th class="vertical-rl">Languages Exam</th>
-      <th class="vertical-rl">Methodologies Exam</th>
-      <th class="vertical-rl">Synoptic Project</th>
-      <th class="vertical-rl">Interview</th> -->
     </thead>
     {% assign learners = site.learners | where: "cohort", cohort.code %}
     {% for learner in learners %}
@@ -45,20 +34,8 @@ title: Cohorts
         {% endif %}        
       {% endfor %}
     </tr>
-      <!-- <li>
-        <a href="{{ learner.url | relative_url }}">{{learner.name}}</a>
-        <ul>
-          {% for flag in course.flags %}
-            {% assign ilp-entry = learner.ilp-entries | where: "flag", flag.code | first %}
-            <li>{{ flag.name }} - 
-              {% if ilp-entry %}
-                Completed
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </li> -->
     {% endfor %}
-    </table>
+  </table>
+  <p>---</p>
 {% endfor %}
 </ul>

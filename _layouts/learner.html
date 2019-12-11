@@ -3,9 +3,12 @@ layout: default
 ---
 {% assign cohort = site.data.cohorts.items | where: "code", page.cohort | first %}
 {% assign course = site.data.courses.items | where: "code", cohort.course | first %}
+{% assign last-ilp = page.ilp-entries | sort: 'date' | last %}
 
 <h1>{{ page.name }} </h1>
 <p class="sub">LEARNER</p>
+
+<p class="sub">ILP last updated {{ last-ilp.date | date_to_string }}</p>
 
 <h3>{{ cohort.name }}</h3>
 <p class="sub">COHORT</p>
@@ -13,17 +16,36 @@ layout: default
 <h3>{{ course.name }}</h3>
 <p class="sub">COURSE</p>
 
-<ul>
-  <li>{{ page.cohort }}</li>
-  <li>{{ page.name }}</li>
-  <li>{{ page.date | date_to_string }}</li>
+<h2>Summary</h2>
+<table>
+  <thead>
+    {% for flag in course.flags %}
+      <th><span class="vertical-rl box-col">{{ flag.name }}</span></th>
+    {% endfor %}
+  </thead>
+  <tr>
+    {% for flag in course.flags %}
+      {% assign ilp-entry = page.ilp-entries | where: "flag", flag.code | first %}
+      {% if ilp-entry %}
+        <td class="{{ ilp-entry.flag-value }}">■</td>
+      {% else %}
+        <td class="incomplete">■</td>
+      {% endif %}        
+    {% endfor %}
+  </tr>
+</table>
 
-  <li>Languages exam status: {{ page.languages-exam-status }}</li>
-
-  <!-- {% assign author = site.authors | where: 'short_name', page.author | first %}
-  {% if author %}
-    - <a href="{{ author.url }}">{{ author.name }}</a>
-  {% endif %} -->
-</ul>
+<h2>Entries</h2>
+{% for ilp-entry in page.ilp-entries %}
+  <h3>{{ ilp-entry.title }}</h3>
+  {% assign flag = course.flags | where: 'code', ilp-entry.flag | first %}
+  <p class="sub">{{ ilp-entry.date | date_to_string }}</p>
+  {% if flag %}
+  <p class="sub">Entry sets '{{ flag.name }}' to '{{ ilp-entry.flag-value }}' </p>
+  <p>{{ ilp-entry.description }}</p>
+  {% endif %}
+  <p>---</p>
+  
+{% endfor %}
 
 {{ content }}
