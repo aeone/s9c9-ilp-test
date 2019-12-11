@@ -14,7 +14,7 @@ collections:
       preview: false
     fields:
       - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'Cohort', name: 'cohort', widget: 'relation', collection: 'config.cohort', displayFields: ['name'], searchFields: ['name'], valueField: ['code'] }
+      - { label: 'Cohort Shortcode', name: 'cohort', widget: 'string' }
       - label: 'Entries'
         name: 'ilp-entries'
         widget: 'list'
