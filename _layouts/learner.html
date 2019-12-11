@@ -42,7 +42,7 @@ layout: default
   <p class="sub">{{ ilp-entry.date | date_to_string }}</p>
   {% if flag %}
   <p class="sub">Entry sets '{{ flag.name }}' to '{{ ilp-entry.flag-value }}' </p>
-  <p>{{ ilp-entry.description }}</p>
+  <div class="desc">{{ ilp-entry.description | markdownify }}</div>
   {% endif %}
   <p>---</p>
   
