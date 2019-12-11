@@ -6,7 +6,7 @@ backend:
 media_folder: 'assets/uploads'
 collections:
   - name: 'learner'
-    label: 'Learners'
+    label: 'Learner'
     folder: '_learners/'
     create: true
     slug: '{{year}}{{month}}-{{cohort}}-{{name}}'
@@ -32,7 +32,7 @@ collections:
          - { label: 'Flag Value', name: 'flag-value', widget: 'select', options: ['incomplete', 'in_progress', 'complete'] }
          - { label: 'Description', name: 'description', widget: 'markdown' }
   - name: 'cohort'
-    label: 'Cohorts'
+    label: 'Cohort'
     folder: '_cohorts/'
     create: true
     slug: '{{code}}'
@@ -50,7 +50,7 @@ collections:
         valueField: "code"
         displayFields: ["name"]
   - name: 'course'
-    label: 'Courses'
+    label: 'Course'
     folder: '_courses/'
     create: true
     slug: '{{code}}'
@@ -67,38 +67,3 @@ collections:
           - { label: 'Name', name: 'name', widget: 'string' }
           - { label: 'Flag Shortcode', name: 'code', widget: 'string' }
           - { label: 'Description', name: 'description', widget: 'markdown' }
-  # - name: 'config'
-  #   label: 'Config'
-  #   editor:
-  #     preview: false
-  #   files:
-  #     - name: 'cohort'
-  #       label: 'Cohorts'
-  #       file: '_data/cohorts.yml'
-  #       fields:
-  #         - label: 'List of cohorts'
-  #           name: 'items'
-  #           widget: 'list'
-  #           fields:
-  #             - { label: 'Name', name: 'name', widget: 'string' }
-  #             - { label: 'Code', name: 'code', widget: 'string' }
-  #             - { label: 'Course', name: 'course', widget: 'string' }
-  #             - { label: 'Description', name: 'description', widget: 'string' }
-  #     - name: 'course'
-  #       label: 'Courses'
-  #       file: '_data/courses.yml'
-  #       fields:
-  #         - label: 'List of courses'
-  #           name: 'items'
-  #           widget: 'list'
-  #           fields:
-  #             - { label: 'Name', name: 'name', widget: 'string' }
-  #             - { label: 'Code', name: 'code', widget: 'string' }
-  #             - label: 'Flags'
-  #               name: 'flags'
-  #               widget: 'list'
-  #               fields:
-  #                - { label: 'Name', name: 'name', widget: 'string' }
-  #                - { label: 'Code', name: 'code', widget: 'string' }
-  #                - { label: 'Description', name: 'description', widget: 'string' }
-              
