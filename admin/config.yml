@@ -35,7 +35,7 @@ collections:
         widget: 'list'
         fields:
          - { label: 'Title', name: 'title', widget: 'string' }
-         - { label: 'Date', name: 'date', widget: 'datetime' }
+         - { label: 'Date', name: 'date', widget: 'datetime', timeFormat: false }
          - { label: 'Type', name: 'type', widget: 'select', options: ['milestone', 'guidance'] }
          - { label: 'Flag', name: 'flag', widget: 'string' }
          - { label: 'Flag Value', name: 'flag-value', widget: 'select', options: ['incomplete', 'in_progress', 'complete'] }
