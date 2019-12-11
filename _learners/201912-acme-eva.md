@@ -1,30 +1,36 @@
 ---
 name: Eva
 cohort: acme-2019
+email: eva@example.com
+phone: 02085551000
+uln: '1'
+line-manager:
+  name: The Man
+  email: the@man.com
 ilp-entries:
-  - date: 2019-11-20
-    title: Unit 1 Assessment Feedback
+  - date: 2019-11-20T00:00:00.000Z
     description: Completed Unit 1 and passed assessment
-    type: milestone
     flag: unit_1_progress
     flag-value: complete
-  - date: 2019-11-24
-    title: Quarterly Review 1
+    title: Unit 1 Assessment Feedback
+    type: milestone
+  - date: 2019-11-24T00:00:00.000Z
     description: 'Had meeting, gave advice - do more stuff'
-    type: guidance
     flag: quarterly_review_1_progress
     flag-value: complete
-  - date: 2019-12-05
-    title: Unit 2 Assessment Feedback
+    title: Quarterly Review 1
+    type: guidance
+  - date: 2019-12-05T00:00:00.000Z
     description: Completed Unit 2 and passed assessment
-    type: milestone
     flag: unit_2_progress
     flag-value: complete
-  - date: 2019-12-10
-    title: Unit 3 Assessment Feedback
-    description: Completed Unit 3 and needs to fix up issues with assessment
+    title: Unit 2 Assessment Feedback
     type: milestone
+  - date: 2019-12-10T00:00:00.000Z
+    description: Completed Unit 3 and needs to fix up issues with assessment
     flag: unit_3_progress
     flag-value: in_progress
+    title: Unit 3 Assessment Feedback
+    type: milestone
 ---
 
