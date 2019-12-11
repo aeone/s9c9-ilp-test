@@ -3,3 +3,7 @@ items:
     code: acme-2019
     course: software-developer
     description: The description
+  - name: Teldrassil 2018
+    code: teldrassil-2018
+    course: software-developer
+    description: Definitely not on fire
