@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-{% assign cohort = site.data.cohorts.items | where: "code", page.cohort | first %}
-{% assign course = site.data.courses.items | where: "code", cohort.course | first %}
+{% assign cohort = site.cohorts | where: "code", page.cohort | first %}
+{% assign course = site.courses | where: "code", cohort.course | first %}
 {% assign last-ilp = page.ilp-entries | sort: 'date' | last %}
 
 <h1>{{ page.name }} </h1>

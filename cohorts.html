@@ -4,8 +4,8 @@ title: Cohorts
 ---
 <h1>Cohorts</h1>
 
-{% for cohort in site.data.cohorts.items %}
-  {% assign course = site.data.courses.items | where: "code", cohort.course | first %}
+{% for cohort in site.cohorts %}
+  {% assign course = site.courses | where: "code", cohort.course | first %}
   <h2>{{ cohort.name }}</h2>
   <p class="sub">COHORT NAME</p>
   <h4>{{ cohort.code }}</h3>

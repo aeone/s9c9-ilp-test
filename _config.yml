@@ -3,6 +3,8 @@ baseurl: /s9c9-ilp-test
 collections:
   learners:
     output: true
+  courses:
+  cohorts:
 
 defaults:
   - scope:
